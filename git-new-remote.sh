@@ -7,12 +7,11 @@ REMOTE_URL=$2
 
 # write new remote settings to .git/config
 
-NEW_CONFIG="[remote \""$REMOTE_NAME\""]
-	url = $REMOTE_URL
-	fetch = +refs/heads/*:refs/remotes/origin/*
+
+NEW_CONFIG="[remote \""$REMOTE_NAME\""]\n\turl = $REMOTE_URL\n\tfetch = +refs/heads/*:refs/remotes/origin/*
 "
 
-echo $NEW_CONFIG > .git/config
+echo -e $NEW_CONFIG >> .git/config
 
 echo "
 Your repo has this as a new remote for $REMOTE_NAME: 
